@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>電腦風扇葉片前掠設計</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;700&family=Orbitron:wght@400;700&display=swap');
+
+        body {
+            background-color: #1a1a1a;
+            color: #e0e0e0;
+            font-family: 'Noto Sans TC', sans-serif;
+            background-image: radial-gradient(#2a2a2a 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+
+        .industrial-border {
+            border: 2px solid #444;
+            position: relative;
+            background: #222;
+            box-shadow: 10px 10px 0px #333;
+        }
+
+        .industrial-border::before {
+            content: "";
+            position: absolute;
+            top: -5px;
+            left: -5px;
+            width: 10px;
+            height: 10px;
+            background: #555;
+            border-radius: 50%;
+        }
+
+        .header-font {
+            font-family: 'Orbitron', sans-serif;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #00ffcc;
+        }
+
+        .accent-line {
+            height: 4px;
+            background: linear-gradient(90deg, #00ffcc, transparent);
+            margin-bottom: 2rem;
+        }
+
+        h2 {
+            border-left: 4px solid #00ffcc;
+            padding-left: 1rem;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            color: #ffffff;
+            font-weight: 700;
+        }
+
+        .highlight-box {
+            background: #2d2d2d;
+            border-right: 4px solid #555;
+            padding: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        li::before {
+            content: ">> ";
+            color: #00ffcc;
+            font-weight: bold;
+        }
+
+        li {
+            margin-bottom: 0.75rem;
+        }
+
+        /* 隱藏捲軸但保留功能 */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #1a1a1a;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #444;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body class="p-4 md:p-12">
+
+    <div class="max-w-4xl mx-auto industrial-border p-8 md:p-12">
+        <header>
+            <h1 class="header-font text-3xl md:text-4xl mb-2 font-bold">電腦風扇扇葉前掠設計 V1.3</h1>
+            <p class="text-gray-500 mb-4 italic">Subject: Computer Fan Blade Skew Analysis // ID-X772</p>
+            <div class="accent-line"></div>
+        </header>
+
+        <section>
+            <p class="text-lg leading-relaxed mb-6">
+                在電腦散熱領域，軸流風扇（Axial Fans）的葉片設計通常呈現向旋轉方向「傾斜」或「彎曲」的特徵。這在空氣動力學中被視為一種 <span class="text-[#00ffcc] font-bold">前掠（Forward Swept）</span> 或 <span class="text-[#00ffcc] font-bold">前向傾斜（Forward Skewed）</span> 設計。
+            </p>
+
+            <h2>1. 降低噪音與抑制共振</h2>
+            <div class="highlight-box">
+                <ul>
+                    <li><strong>切割氣流的物理特性：</strong> 前掠時，葉片邊緣與空氣接觸點由葉根向葉尖移動，達成「平滑切割」而非「整片撞擊」。</li>
+                    <li><strong>消除特定頻率噪音：</strong> 分散風切聲頻率，避免刺耳的單一頻率鳴叫（Whine），運作聲更柔和。</li>
+                    <li><strong>減少葉尖渦流：</strong> 改變壓力分佈，減少亂流，大幅降低空氣摩擦噪音。</li>
+                </ul>
+            </div>
+
+            <h2>2. 提升低壓下的風量輸出</h2>
+            <div class="highlight-box">
+                <ul>
+                    <li><strong>有效推動面積：</strong> 前掠設計通常伴隨較大的葉尖面積，能更有效地推動線速度最高處的空氣。</li>
+                    <li><strong>適合機殼排風：</strong> 在低阻力環境下，能在較低轉速提供極高排風效率。</li>
+                </ul>
+            </div>
+
+            <h2>3. 延緩失速與流量控制</h2>
+            <div class="highlight-box">
+                <ul>
+                    <li><strong>氣流徑向流動：</strong> 誘導氣流向中心匯聚，延緩葉片表面氣流分離（失速）。</li>
+                    <li><strong>改善邊界層：</strong> 將不穩定的空氣向內推，避免在葉片尖端堆積。</li>
+                </ul>
+            </div>
+
+            <h2>4. 緊湊空間的工業考量</h2>
+            <div class="highlight-box">
+                <ul>
+                    <li><strong>高實度設計：</strong> 允許在有限的框架內裝入更長的葉片邊緣（Leading Edge）。</li>
+                    <li><strong>結構強度：</strong> 在不增加重量的前提下提供優秀的物理結構穩定性。</li>
+                </ul>
+            </div>
+
+            <h2 style="border-left-color: #ffaa00;">補充：後掠或平直葉片的使用時機</h2>
+            <div class="border border-dashed border-gray-600 p-4 mt-4">
+                <p class="mb-2 text-gray-400">當環境改變時，設計邏輯也會隨之調整：</p>
+                <ul class="text-gray-300">
+                    <li><strong class="text-white">高風壓需求：</strong> 用於冷排或密集的散熱片，需產生更高的靜壓（Static Pressure）。</li>
+                    <li><strong class="text-white">工業抽風機：</strong> 在高壓力環境下，後掠葉片具有較高的能源效率。</li>
+                </ul>
+            </div>
+        </section>
+
+        <footer class="mt-12 pt-6 border-t border-gray-700 text-sm text-gray-500 flex justify-between">
+            <span>&copy; 2026 CREATED BY RANDY CHEN</span>
+        </footer>
+    </div>
+
+    <script>
+        // 禁用右鍵功能且不顯示任何提示
+        document.addEventListener('contextmenu', function(e) {
+            e.preventDefault();
+        }, false);
+
+        // 額外的保護：禁止特定組合鍵 (如 Ctrl+U, F12)
+        document.onkeydown = function(e) {
+            if (e.keyCode == 123) { // F12
+                return false;
+            }
+            if (e.ctrlKey && e.shiftKey && e.keyCode == 73) { // Ctrl+Shift+I
+                return false;
+            }
+            if (e.ctrlKey && e.keyCode == 85) { // Ctrl+U
+                return false;
+            }
+        };
+    </script>
+</body>
+</html>
